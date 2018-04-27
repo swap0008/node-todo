@@ -19,12 +19,13 @@ MongoClient.connect(url, (err, client) => {
         console.log('Unable to fetch information.', err);
     });*/
     
-    client.db(dbName).collection('Users').find().toArray().then((docs) => {
+   client.db(dbName).collection('Users').find().toArray().then((docs) => {
         console.log('Users');
         console.log(JSON.stringify(docs, undefined, 4));
     }, (err) => {
         console.log('Unable to fetch data.', err);
     });
+    
     
     client.close();
 });
